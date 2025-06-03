@@ -14,6 +14,7 @@
   <style name="main_theme" parent="Theme.MaterialComponents.NoActionBar">
     <item name="android:windowLightStatusBar">true</item>
     <item name="android:statusBarColor">@android:color/transparent</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:fitsSystemWindows">false</item>
   </style>
 </resources>
-

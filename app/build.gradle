@@ -20,3 +20,8 @@ dependencies{
   implementation "androidx.core:core:1.13.1"
   implementation "androidx.core:core-splashscreen:1.0.1"
 }
+
+task runn(type: Exec) {
+    dependsOn 'installDebug'
+    commandLine 'adb', 'shell', 'am', 'start', '-n', 'com.wikibytes.gpay/.Splash'
+}
