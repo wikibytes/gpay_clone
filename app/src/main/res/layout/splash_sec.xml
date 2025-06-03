@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#FFFFFF">
+
+<ImageView
+  android:id="@+id/global_white_sqr"
+  android:layout_width = "match_parent"
+  android:layout_height="match_parent"
+  android:layout_centerHorizontal="true"
+  android:layout_centerVertical="true"
+  android:src="@drawable/white_sqr"
+  android:visibility="visible"/>
+  />
+
+
+<ImageView
+  android:id="@+id/logo"
+  android:layout_width="155dp"
+  android:layout_height="155dp"
+  android:layout_centerHorizontal="true"
+  android:layout_centerVertical="true"
+  android:src="@drawable/custom_colored_background"
+  android:translationY="0.1dp"/>
+
+<TextView
+  android:id="@+id/google"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_below="@id/logo"
+  android:layout_centerHorizontal="true"
+  android:layout_marginTop="160dp"
+  android:text="Google"
+  android:textSize="35sp"
+  android:textColor="@color/google_gray"
+  android:fontFamily="@font/google_font"
+  android:textStyle="bold" />
+
+</RelativeLayout>
+
