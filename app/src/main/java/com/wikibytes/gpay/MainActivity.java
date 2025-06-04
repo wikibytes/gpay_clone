@@ -2,6 +2,7 @@ package com.wikibytes.gpay;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import androidx.core.view.ViewCompat;
@@ -11,33 +12,43 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import android.widget.TextView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
+
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.d(TAG, "onCreate started");
+
         // Set theme before setting content view to ensure it applies
         setTheme(R.style.main_theme);
         setContentView(R.layout.activity_main);
 
-        // Make status bar transparent
+        // Make status bar transparent (commented out to test crash fix)
+        /*
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         window.setStatusBarColor(android.graphics.Color.TRANSPARENT);
+        */
 
         // Handle system bar insets for padding
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            if (v == null) {
+                Log.e(TAG, "Root view with ID 'main' not found");
+                return insets;
+            }
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // Initialize RecyclerViews
+        // Initialize RecyclerViews with null checks
         initRecyclerViewPeople();
         initRecyclerViewBusinesses();
         initRecyclerViewOffers();
@@ -46,15 +57,22 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Reapply transparency on resume to handle theme changes
+        Log.d(TAG, "onResume called");
+        // Reapply transparency on resume to handle theme changes (commented out to test crash fix)
+        /*
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         window.setStatusBarColor(android.graphics.Color.TRANSPARENT);
+        */
     }
 
     private void initRecyclerViewPeople() {
         RecyclerView recyclerView = findViewById(R.id.recycler_view_people);
+        if (recyclerView == null) {
+            Log.e(TAG, "RecyclerView 'recycler_view_people' not found in layout");
+            return;
+        }
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         List<PersonItem> peopleList = new ArrayList<>();
         peopleList.add(new PersonItem("Bishel", R.drawable.circle));
@@ -68,6 +86,10 @@ public class MainActivity extends Activity {
 
     private void initRecyclerViewBusinesses() {
         RecyclerView recyclerView = findViewById(R.id.recycler_view_businesses);
+        if (recyclerView == null) {
+            Log.e(TAG, "RecyclerView 'recycler_view_businesses' not found in layout");
+            return;
+        }
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         List<BusinessItem> businessList = new ArrayList<>();
         businessList.add(new BusinessItem("Pahali Store", R.drawable.circle));
@@ -80,6 +102,10 @@ public class MainActivity extends Activity {
 
     private void initRecyclerViewOffers() {
         RecyclerView recyclerView = findViewById(R.id.recycler_view_offers);
+        if (recyclerView == null) {
+            Log.e(TAG, "RecyclerView 'recycler_view_offers' not found in layout");
+            return;
+        }
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         List<OfferItem> offerList = new ArrayList<>();
         offerList.add(new OfferItem("Rewards", R.drawable.circle));

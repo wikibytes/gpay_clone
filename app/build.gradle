@@ -27,3 +27,4 @@ task runn(type: Exec) {
     dependsOn 'installDebug'
     commandLine 'adb', 'shell', 'am', 'start', '-n', 'com.wikibytes.gpay/.Splash'
 }
+
