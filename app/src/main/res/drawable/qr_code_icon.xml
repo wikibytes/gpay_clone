@@ -1,10 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- White background -->
     <path
-        android:fillColor="#1976D2"
-        android:pathData="M4,4 h6 v6 h-6 z M14,4 h6 v6 h-6 z M4,14 h6 v6 h-6 z M16,16 h2 v2 h-2 z M12,12 h2 v2 h-2 z" />
+        android:fillColor="#FFFFFF"
+        android:pathData="M0,0 h100 v100 h-100 Z"/>
+    <!-- Top-left blue square -->
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M5,5 h30 v30 h-30 Z"/>
+    <!-- Top-left white inner square -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11,11 h18 v18 h-18 Z"/>
+    <!-- Top-right blue square -->
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M65,5 h30 v30 h-30 Z"/>
+    <!-- Top-right white inner square -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M71,11 h18 v18 h-18 Z"/>
+    <!-- Bottom-left blue square -->
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M5,65 h30 v30 h-30 Z"/>
+    <!-- Bottom-left white inner square -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11,71 h18 v18 h-18 Z"/>
+    <!-- Bottom-right blue square -->
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M65,65 h30 v30 h-30 Z"/>
+    <!-- Bottom-right white inner square -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M71,71 h18 v18 h-18 Z"/>
+    <!-- Central flower-like shape: 8 circles -->
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M57.5,50 A2.5,2.5 0 1,0 62.5,50 A2.5,2.5 0 1,0 57.5,50 Z
+                          M54.57,42.93 A2.5,2.5 0 1,0 59.57,42.93 A2.5,2.5 0 1,0 54.57,42.93 Z
+                          M50,40 A2.5,2.5 0 1,0 55,40 A2.5,2.5 0 1,0 50,40 Z
+                          M45.43,42.93 A2.5,2.5 0 1,0 50.43,42.93 A2.5,2.5 0 1,0 45.43,42.93 Z
+                          M42.5,50 A2.5,2.5 0 1,0 47.5,50 A2.5,2.5 0 1,0 42.5,50 Z
+                          M45.43,57.07 A2.5,2.5 0 1,0 50.43,57.07 A2.5,2.5 0 1,0 45.43,57.07 Z
+                          M50,60 A2.5,2.5 0 1,0 55,60 A2.5,2.5 0 1,0 50,60 Z
+                          M54.57,57.07 A2.5,2.5 0 1,0 59.57,57.07 A2.5,2.5 0 1,0 54.57,57.07 Z"/>
+    <!-- Additional 5 circles -->
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M47.5,35 A2.5,2.5 0 1,0 52.5,35 A2.5,2.5 0 1,0 47.5,35 Z"/>
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M47.5,65 A2.5,2.5 0 1,0 52.5,65 A2.5,2.5 0 1,0 47.5,65 Z"/>
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M35,47.5 A2.5,2.5 0 1,0 40,47.5 A2.5,2.5 0 1,0 35,47.5 Z"/>
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M60,47.5 A2.5,2.5 0 1,0 65,47.5 A2.5,2.5 0 1,0 60,47.5 Z"/>
+    <path
+        android:fillColor="#0052CC"
+        android:pathData="M60,60 A2.5,2.5 0 1,0 65,60 A2.5,2.5 0 1,0 60,60 Z"/>
 </vector>
